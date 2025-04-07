@@ -1,0 +1,8 @@
+# Robots.txt for techfusiontutorial.me
+# This file allows all search engines to crawl the entire website.
+
+User-agent: *
+Disallow: 
+
+# Sitemap location
+Sitemap: http://techfusiontutorial.me/sitemap.xml

@@ -1,0 +1,25 @@
+.title-name{
+    padding-left: 10px;
+    font-family: georgia;
+    font-weight: 1000;
+    font-size: 30px;
+}
+
+.nav-elements{
+    font-size: 20px;
+    font-family: georgia;
+}
+
+.main-home{
+    background-image: url(bg-home.jpg);
+    background-size: cover;
+}
+
+.main{
+    margin-inline: 15px;
+
+}
+
+.container-fluid{
+    color: white;
+}

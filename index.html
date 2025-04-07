@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFusion Tutorial</title>
+    <link rel="icon" href="logo.png" type="image/png">
+  
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Engagement&amp;family=Epilogue:ital,wght@0,100..900;1,100..900&amp;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap");
+        :root {
+          --body: #fff;
+          --black: #000;
+          --white: #fff;
+          --theme: #EB0029;
+          --theme2:#FC791A;
+          --title:#010F1C;
+          --dark: #222222;
+          --text: #5C6574;
+          --text2: #ababab;
+          --bg: #02142A;
+          --box-shadow: 0px 6px 30px 0px rgba(52, 55, 170, 0.15);
+          --bg2: #F4F1EA;
+          --border: #373737;
+          --border-2: #D2D2D1;
+          --border-3: #ffffff17;
+          --title-font: "Epilogue", sans-serif;
+          --body-font: "Roboto", sans-serif;
+          --icon-font: "Font Awesome 6 Pro";
+        }
+
+
+        @-webkit-keyframes spinner {
+          to {
+            -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+          }
+        }
+        @keyframes spinner {
+          to {
+            -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+          }
+        }
+
+        @-webkit-keyframes letters-loading {
+          0%, 75%, 100% {
+            opacity: 0;
+            transform: rotateY(-90deg);
+          }
+          25%, 50% {
+            opacity: 1;
+            transform: rotateY(0deg);
+          }
+        }
+        @keyframes letters-loading {
+          0%, 75%, 100% {
+            opacity: 0;
+            transform: rotateY(-90deg);
+          }
+          25%, 50% {
+            opacity: 1;
+            transform: rotateY(0deg);
+          }
+        }
+
+
+        
+        .preloader {
+          align-items: center;
+          cursor: default;
+          display: flex;
+          height: 100%;
+          justify-content: center;
+          position: fixed;
+          left: 0;
+          top: 0;
+          width: 100%;
+          z-index: 9999999;
+          background-color: white;
+        }
+        .preloader .animation-preloader {
+          z-index: 1000;
+        }
+        .preloader .animation-preloader .spinner {
+          animation: spinner 1s infinite linear;
+          border-radius: 50%;
+          border: 3px solid rgba(0, 0, 0, 0.2);
+          border-top-color: var(--theme);
+          height: 9em;
+          margin: 0 auto 3.5em auto;
+          width: 9em;
+        }
+        @media (max-width: 767px) {
+          .preloader .animation-preloader .spinner {
+            width: 7.5em;
+            height: 7.5em;
+            margin: 0 auto 1.5em auto;
+          }
+        }
+        .preloader .animation-preloader .txt-loading {
+          font: bold 5em var(--title-font), var(--body-font);
+          text-align: center;
+          user-select: none;
+            font-size: 40px;
+        }
+        @media (max-width: 767px) {
+          .preloader .animation-preloader .txt-loading {
+            font-size: 2.5em;
+              font-size: 40px;
+          }
+        }
+        .preloader .animation-preloader .txt-loading .letters-loading {
+          color: var(--theme);
+          position: relative;
+        }
+        .preloader .animation-preloader .txt-loading .letters-loading:nth-child(2):before {
+          animation-delay: 0.2s;
+        }
+        .preloader .animation-preloader .txt-loading .letters-loading:nth-child(3):before {
+          animation-delay: 0.4s;
+        }
+        .preloader .animation-preloader .txt-loading .letters-loading:nth-child(4):before {
+          animation-delay: 0.6s;
+        }
+        .preloader .animation-preloader .txt-loading .letters-loading:nth-child(5):before {
+          animation-delay: 0.8s;
+        }
+        .preloader .animation-preloader .txt-loading .letters-loading:nth-child(6):before {
+          animation-delay: 1s;
+        }
+        .preloader .animation-preloader .txt-loading .letters-loading:nth-child(7):before {
+          animation-delay: 1.2s;
+        }
+        .preloader .animation-preloader .txt-loading .letters-loading:nth-child(8):before {
+          animation-delay: 1.4s;
+        }
+        .preloader .animation-preloader .txt-loading .letters-loading:nth-child(9):before {
+          animation-delay: 1.6s;
+        }
+        .preloader .animation-preloader .txt-loading .letters-loading:nth-child(10):before {
+          animation-delay: 1.8s;
+        }
+        .preloader .animation-preloader .txt-loading .letters-loading::before {
+          animation: letters-loading 4s infinite;
+          color: var(--title);
+          content: attr(data-text-preloader);
+          left: 0;
+          opacity: 0;
+          font-family: var(--title-font);
+          position: absolute;
+          top: -3px;
+          transform: rotateY(-90deg);
+        }
+        .preloader p {
+          font-size: 15px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 8px;
+          color: var(--theme);
+        }
+        .preloader .loader {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          font-size: 0;
+          z-index: 1;
+          pointer-events: none;
+        }
+        .preloader .loader .row {
+          height: 100%;
+        }
+        .preloader .loader .loader-section {
+          padding: 0px;
+        }
+        .preloader .loader .loader-section .bg {
+          background-color: var(--bg);
+          height: 100%;
+          left: 0;
+          width: 100%;
+          transition: all 800ms cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        .preloader.loaded .animation-preloader {
+          opacity: 0;
+          transition: 0.3s ease-out;
+        }
+        .preloader.loaded .loader-section .bg {
+          width: 0;
+          transition: 0.7s;
+          -webkit-transition: 0.7s;
+          -moz-transition: 0.7s;
+          -ms-transition: 0.7s;
+          -o-transition: 0.7s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader Start -->
+    <div id="preloader" class="preloader">
+        <div class="animation-preloader">
+            <div class="spinner">
+            </div>
+            <div class="txt-loading">
+                <span data-text-preloader="T" class="letters-loading">
+                    T
+                </span>
+                <span data-text-preloader="E" class="letters-loading">
+                    E
+                </span>
+                <span data-text-preloader="C" class="letters-loading">
+                    C
+                </span>
+                <span data-text-preloader="H" class="letters-loading">
+                    H
+                </span>
+                <span data-text-preloader="F" class="letters-loading">
+                    F
+                </span>
+                <span data-text-preloader="U" class="letters-loading">
+                    U
+                </span>
+                <span data-text-preloader="S" class="letters-loading">
+                    S
+                </span>
+                <span data-text-preloader="I" class="letters-loading">
+                    I
+                </span>
+                <span data-text-preloader="O" class="letters-loading">
+                    O
+                </span>
+                <span data-text-preloader="N" class="letters-loading">
+                    N
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // Preloader and Redirect Logic
+    window.addEventListener("load", () => {
+        const preloader = document.getElementById("preloader");
+        setTimeout(() => {
+            preloader.style.display = "none"; // Hide the preloader
+            window.location.href = "home.html"; // Redirect to index.html
+        }, 3000); // Adjust the timeout (3 seconds here) as per your preloader duration
+    });
+</script>
+</html>
