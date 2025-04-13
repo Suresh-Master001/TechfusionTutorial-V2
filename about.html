@@ -7,17 +7,16 @@
 	<link rel="icon" href="logo.png" type="image/png">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	
 	
 	<style type="text/css">
 		.feature-icon-small{
 			width: 50px;
 			height: 50px;
+			padding-top: 15px;
 		}
-
-		.feature-icon-small svg{
-			color: white;
-		}
-
+    
 		.col-lg-4{
 			display: grid;
 			justify-items: center;
@@ -30,26 +29,10 @@
 </head>
 <body>
 
-	<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-	<symbol id="collection" viewBox="0 0 16 16">
-    	<path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/>
-	</symbol>
-	<symbol id="gear-fill" viewBox="0 0 16 16">
-    	<path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
-	</symbol>
-	<symbol id="speedometer" viewBox="0 0 16 16">
-    	<path d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2zM3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
-    	<path fill-rule="evenodd" d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.945 11.945 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0z"/>
-	</symbol>
-	<symbol id="table" viewBox="0 0 16 16">
-    	<path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"/>
-	</symbol>
-	</svg>
-
-	<nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
 	  <div class="container-fluid">
 	  	<img src="logo.jpg" alt="Techfusion Logo" height="60px" width="80px">
-	    <a class="navbar-brand title-name" href="#">TECHFUSION</a>
+	    <a class="navbar-brand title-name" href="#">TFT</a>
 	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 	      <span class="navbar-toggler-icon"></span>
 	    </button>
@@ -76,80 +59,76 @@
 	  </div>
 	</nav>
 
-	<div class="container ">
+	<div class="container py-5 my-5">
     <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
       <div class="col d-flex flex-column align-items-start gap-2">
-      	<img src="A.png" height="50%" width="60%">
-        <h2 class="fw-bold text-body-emphasis">About TechFusion</h2>
-        <p class="text-body-secondary">At TechFusion, we believe in empowering aspiring developers by bridging the gap between theoretical learning and practical application. Founded in 2023, TechFusion is committed to providing top-quality education in web and software development. Our interactive tutorials, hands-on projects, and industry-relevant guidance ensure learners are equipped with the skills needed to excel in today’s tech-driven world.</p>
+      	<img src="bg-home1.jpg" height="100%" width="100%">
       </div>
+      <div class="col d-flex flex-column align-items-start gap-2">
+        <h2 class="fw-bold text-body-emphasis">About TechFusion Tutorial</h2>
+        <p class="text-body">TechFusion Tutorial, founded by Freedom Master Laptop Service in 2023, is a dedicated learning platform designed to shape the next generation of tech professionals. With a focused curriculum on full-stack web development, software development, and future-forward skills like game development, we aim to make technical education accessible, structured, and effective for all.<br>
+          Our approach is practical and goal-oriented. Every video tutorial is paired with carefully designed tasks that help reinforce concepts and ensure real-world skill development. By following the guided path and completing each task, learners gain hands-on experience that builds confidence and competence.</p>
+      </div>
+    </div>
 
-      <div class="col">
-        <div class="row row-cols-1 row-cols-sm-2 g-4">
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <svg class="bi" width="1em" height="1em">
-                <use xlink:href="#collection" />
-              </svg>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">Interactive Learning:</h4>
-            <p class="text-body-secondary">We emphasize hands-on projects and real-world applications for a deeper understanding of concepts.</p>
+    <div class="col m-5">
+      <h2 class="text-center py-5 ">Why Join TechFusion Tutorial?</h2>
+      <div class="row row-cols-1 row-cols-sm-2 g-4">
+        <div class="col d-flex flex-column gap-2">
+          <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+            <p class="bi ">🛠️</p>
           </div>
+          <h4 class="fw-semibold mb-0 text-body-emphasis">Real-Time Learning Path</h4>
+          <p class="text-body-secondary">Learn at your own pace with structured video lessons and tasks that simulate real project environments.</p>
+        </div>
 
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <svg class="bi" width="1em" height="1em">
-                <use xlink:href="#gear-fill" />
-              </svg>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">Community Support:</h4>
-            <p class="text-body-secondary">TechFusion fosters a collaborative environment where learners and mentors work together to solve challenges.</p>
+        <div class="col d-flex flex-column gap-2">
+          <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+            <p class="bi ">🛠️</p>
           </div>
+          <h4 class="fw-semibold mb-0 text-body-emphasis">Task-Based Mastery</h4>
+          <p class="text-body-secondary">Every module includes challenges to solve, helping you practice actively and build a strong portfolio along the way.</p>
+        </div>
 
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <svg class="bi" width="1em" height="1em">
-                <use xlink:href="#speedometer" />
-              </svg>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">Resources:</h4>
-            <p class="text-body-secondary">From beginner tutorials to advanced guides, we provide structured learning materials tailored to individual growth.</p>
+        <div class="col d-flex flex-column gap-2">
+          <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+            <p class="bi ">🛠️</p>
           </div>
+          <h4 class="fw-semibold mb-0 text-body-emphasis">Weekend-Friendly Schedule</h4>
+          <p class="text-body-secondary">Our classes are perfectly timed for working professionals and students - just 2 hours every Saturday and Sunday.</p>
+        </div>
 
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <svg class="bi" width="1em" height="1em">
-                <use xlink:href="#table" />
-              </svg>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">Practical Excellence:</h4>
-            <p class="text-body-secondary">Our focus is on creating industry-ready developers who can confidently work on real-world projects.</p>
+        <div class="col d-flex flex-column gap-2">
+          <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+            <p class="bi ">🛠️</p>
           </div>
+          <h4 class="fw-semibold mb-0 text-body-emphasis">Future-Ready Topics</h4>
+          <p class="text-body-secondary">In addition to core web and software development, we're expanding into game development and other modern tech domains.</p>
         </div>
       </div>
     </div>
 
-  	<div class="row mb-2">
+  <div class="row mb-2">
     <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-        	<strong class="d-inline-block mb-2 text-success-emphasis">World</strong>
+          <strong class="d-inline-block mb-2 text-success-emphasis">TFT</strong>
           <h3 class="mb-0">Our Vision</h3>
-          <p class="mb-auto">To be a global leader in development education, inspiring learners to build impactful projects and solutions..</p>
+          <p class="mb-auto">To be the most trusted and impactful technical tutorial platform in India, inspiring learners to create, innovate, and lead in the digital world.</p>
         </div>
-        <div class="col-auto d-none d-lg-block">
+        <div class="col-auto d-lg-block">
           <img src="source\V.png" class="bd-placeholder-img" width="200" height="250" >
         </div>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
+          <strong class="d-inline-block mb-2 text-success-emphasis">TFT</strong>
 					<h3 class="mb-0">Our Mission</h3>
-          <p class="card-text mb-auto">To make quality tech education accessible and engaging for everyone, fostering creativity and innovation in the development field.</p>
+          <p class="card-text mb-auto">To provide high-quality, accessible, and practical technical education through video-based learning and hands-on challenges.</p>
         </div>
-        <div class="col-auto d-none d-lg-block">
+        <div class="col-auto d-lg-block">
           <img src="source\M.png" class="bd-placeholder-img" width="200" height="250" >
         </div>
       </div>
@@ -184,16 +163,22 @@
   </div>
 
 
-      <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          <li class="nav-item"><a href="home.html" class="nav-link px-2 text-body-secondary">Home</a></li>
-          <li class="nav-item"><a href="course.html" class="nav-link px-2 text-body-secondary">Course</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-body-secondary">Contact</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link px-2 text-body-secondary">About</a></li>
-        </ul>
-        <p class="text-center text-body-secondary">&copy; 2024 Company, Inc</p>
-      </footer>
+  <footer class="footer">
+    <ul class="nav justify-content-center mb-3">
+      <li class="nav-item"><a href="home.html" class="nav-link px-2 text-body-secondary">Home</a></li>
+      <li class="nav-item"><a href="course.html" class="nav-link px-2 text-body-secondary">Course</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-body-secondary">Contact</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link px-2 text-body-secondary">About</a></li>
+    </ul>
+      <p>&copy; 2025 TechFusion Tutorial. All rights reserved.</p>
+      <div class="social-icons mt-2">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:info@techfusion.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </footer>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	
