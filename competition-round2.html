@@ -45,12 +45,30 @@
     .button:hover {
       background-color: #c12059;
     }
+    body.locked {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #locked-message {
+      text-align: center;
+      color: red;
+      font-weight: bold;
+      margin-top: 30px;
+    }
 
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Style Rebelz 2025 - Round 2</h1>
+    <div id="timer-container">
+      <h2>Time Remaining: <span id="countdown">Loading...</span></h2>
+    </div>
     <p><strong>Time Limit:</strong> 1 Hour 30 Minutes</p>
     <p><strong>Points:</strong> 20 Points</p>
 
@@ -69,8 +87,62 @@
     <h3>Submission:</h3>
     <p>Please upload your completed <code>index file or zip file</code> file below. Make sure the clone design is inside one file with embedded CSS. Use only HTML and CSS. No JavaScript required.</p>
     
-    <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSfKnZk4OOKMAhwn1iCxWCkdqLlWrBFhXDSamWFNpHohW85MBw/viewform">Submit your files</a>
+    <a class="button" id="submitBtn" href="https://docs.google.com/forms/d/e/1FAIpQLSfKnZk4OOKMAhwn1iCxWCkdqLlWrBFhXDSamWFNpHohW85MBw/viewform">Submit your files</a>
+    
+    <div id="locked-message" class="hidden">
+      <h3>Time's up! Round 2 is now closed.</h3>
+    </div> 
+
+    <script>
+      // Set the timer duration: 1.5 hours in milliseconds
+        const duration = 1.5 * 60 * 60 * 1000;
+        const countdownEl = document.getElementById("countdown");
+        const submitBtn = document.getElementById("submitBtn");
+        const lockedMessage = document.getElementById("locked-message");
+
+        // Store the start time in localStorage to persist across refresh
+        let startTime = localStorage.getItem("round2StartTime");
+
+        if (!startTime) {
+          startTime = Date.now();
+          localStorage.setItem("round2StartTime", startTime);
+        } else {
+          startTime = parseInt(startTime);
+        }
+
+        function updateCountdown() {
+          const now = Date.now();
+          const remaining = startTime + duration - now;
+
+          if (remaining <= 0) {
+            countdownEl.textContent = "00:00:00";
+            lockPage();
+            return;
+          }
+
+          const hours = Math.floor((remaining / (1000 * 60 * 60)) % 24);
+          const minutes = Math.floor((remaining / (1000 * 60)) % 60);
+          const seconds = Math.floor((remaining / 1000) % 60);
+
+          countdownEl.textContent = 
+            hours.toString().padStart(2, '0') +
+            minutes.toString().padStart(2, '0') +
+            seconds.toString().padStart(2, '0');
+        }
+
+        function lockPage() {
+          submitBtn.style.display = "none";
+          lockedMessage.classList.remove("hidden");
+          document.body.classList.add("locked");
+          localStorage.removeItem("round2StartTime"); // Optional: reset for next round
+        }
+
+        updateCountdown();
+        const countdownInterval = setInterval(() => {
+          updateCountdown();
+        }, 1000);
 
 
+    </script>
 </body>
 </html>
