@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Investments in the Nation – Competition</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #f0f4f8;
+      font-family: sans-serif;
+    }
+    p{
+      font-size: 20px;
+    }
+    .header-section {
+      text-align: center;
+      background: linear-gradient(135deg, #007BFF, #00BFFF);
+      color: white;
+      border-radius: 0 0 60px 60px;
+    }
+    .round-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card {
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .locked {
+      opacity: 0.8;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-section p-4 m-lg-3 mb-4">
+    <h1 class="text-center fw-bold mb-2">Style Rebelz 2025 - Web Competition</h1>
+    <p class="text-center m-lg-3 p-lg-3">
+    Welcome to the Style Rebelz 2025 Web Competition organized by TechFusion Tutorial and sponsored by Freedom Master Laptop Service. 
+    This exciting contest will test your skills in web design and development through three unique and challenging rounds.
+    Get ready to quiz, clone, and create like a true coding rebel! Unlock each round during its scheduled time and showcase your talent.
+    </p>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row mx-5">
+      
+      <div class="row">
+        <div class="col-md-4">
+          <div id="round1" class="card text-center">
+            <div class="card-img">
+              <img src="https://cdn.pixabay.com/photo/2015/05/26/23/52/technology-785742_960_720.jpg" class="round-image" alt="Round 1">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Round 1: Quiz</h5>
+              <p class="card-text">30 Questions | 15 Minutes | Auto-submit</p>
+              <button class="btn btn-primary" onclick="showRules(1)">Start Round 1</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id="round2" class="card text-center">
+            <div class="card-img">
+              <img src="https://cdn.pixabay.com/photo/2015/09/17/17/25/code-944499_960_720.jpg" class="round-image" alt="Round 1">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Round 2: Web Page Cloning</h5>
+              <p class="card-text">HTML, CSS, Bootstrap | 1:30 Hours</p>
+              <button class="btn btn-primary" onclick="showRules(2)">Start Round 2</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id="round3" class="card text-center">
+            <div class="card-img">
+              <img src="https://cdn.pixabay.com/photo/2022/05/04/09/48/technology-7173626_960_720.jpg" class="round-image" alt="Round 1">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Round 3: Limited Elements Challenge</h5>
+              <p class="card-text">HTML, CSS, JS | 1:30 Hours</p>
+              <button class="btn btn-primary" onclick="showRules(3)">Start Round 3</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal -->
+ <div class="modal fade" id="rulesModal" tabindex="-1" aria-labelledby="rulesModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rulesModalLabel">Rules & Regulations</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modalBodyText">
+        <!-- Content will be set by JS -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="startButton">Start</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+
+  function inTimeRange(startHour, startMin, endHour, endMin) {
+    const current = hours * 60 + minutes;
+    const start = startHour * 60 + startMin;
+    const end = endHour * 60 + endMin;
+    return current >= start && current <= end;
+  }
+
+  function lockUnlockRounds() {
+    const round1 = document.getElementById("round1");
+    const round2 = document.getElementById("round2");
+    const round3 = document.getElementById("round3");
+
+    if (!inTimeRange(10, 0, 10, 45)) round1.classList.add("locked");
+    if (!inTimeRange(14, 0, 16, 30)) round2.classList.add("locked");
+    if (!inTimeRange(19, 0, 21, 30)) round3.classList.add("locked");
+  }
+
+  function showRules(round) {
+    const rules = {
+    1: `Round 1: Online Quiz\n\n- 30 multiple-choice questions\n- Time Limit: 15 minutes\n- Auto-submit after 15 minutes\n\nMake sure you complete the quiz within the allotted time. Note: Don't Submit or participate without entering your name.`,
+    2: `Round 2: Web Page Cloning\n\n- Task: Clone the provided web page\n- Use: HTML, CSS, Bootstrap\n- Time Limit: 1 hour 30 minutes\n\nAll required images and resources will be given. Do not use AI or external help. Submissions after time will not be accepted.`,
+    3: `Round 3: Creative Web Challenge\n\n- Use limited HTML, CSS, Bootstrap, and JavaScript\n- Specific elements and events will be restricted\n- Time Limit: 1 hour 30 minutes\n\nYou must work within the given constraints. Focus on logic and creativity. Late submissions will not be counted.`
+  };
+
+
+    if (confirm(rules[round] + "\n\nClick OK to start.")) {
+      window.location.href = `competition-round${round}.html`;
+    }
+  }
+
+
+  document.getElementById("startButton").addEventListener("click", function () {
+    window.location.href = `competition-round${currentRound}.html`;
+  });
+
+  window.onload = lockUnlockRounds;
+</script></body>
+</html>

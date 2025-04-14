@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Round One - Style Rebelz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      font-size: 25px;
+      height: 90vh;
+      justify-content: center;
+      align-content: center;
+      background: url("https://cdn.pixabay.com/photo/2015/05/26/23/52/technology-785742_1280.jpg") no-repeat center/cover;
+    }
+    #quiz-container {
+      background: white;
+      padding: 50px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    .question {
+      font-size: 30px;
+      font-weight: bold;
+    }
+    .options {
+      margin: 25px 0;
+    }
+    .option {
+      margin-bottom: 25px;
+    }
+    #next-btn, #prev-btn {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #next-btn:hover, #prev-btn:hover {
+      background: #0056b3;
+    }
+    #timer {
+      text-align: right;
+      font-size: 18px;
+      font-weight: bold;
+      color: #dc3545;
+    }
+    h1{
+      text-align: center;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Style Rebelz 2025 - Round 1</h1>
+  <div id="quiz-container">
+    <form action="">
+      <input type="hidden" id="username" name="entry.604531115">
+    </form>
+    <div id="timer">Time left: <span id="time">15:00</span></div>
+    <div id="question-box">
+      <p class="question" id="question"></p>
+      <div class="options" id="options"></div>
+      </div>
+    <button id="next-btn">Next</button>
+  </div>
+
+  <script>
+
+    const username= prompt("Enter your name: ");
+
+    const questions = [
+      {
+        q: "What does HTML stand for?",
+        type: "radio",
+        options: [
+          "Hyper Trainer Marking Language",
+          "HyperText Markup Language",
+          "HyperText Markdown Language",
+          "HighText Machine Language"
+        ]
+      },
+      {
+        q: "Which tag creates a hyperlink?",
+        type: "radio",
+        options: ["<link>", "<a>", "<href>", "<hyper>"]
+      },
+      {
+        q: "Which tag is used for inserting the largest heading?",
+        type: "radio",
+        options: ["<head>", "<h6>", "<h1>", "<heading>"]
+      },
+      {
+        q: "What does <br> do in HTML?",
+        type: "radio",
+        options: ["Makes text bold", "Inserts a line break", "Breaks page into sections", "Clears float"]
+      },
+      {
+        q: "Which attribute is used to provide image description?",
+        type: "radio",
+        options: ["title", "desc", "alt", "value"]
+      },
+      {
+        q: "What is the correct syntax to create an email link?",
+        type: "radio",
+        options: [
+          "<a href='mail.com'>",
+          "<a href='email:someone@example.com'>",
+          "<a href='mailto:someone@example.com'>",
+          "<mail href='someone@example.com'>"
+        ]
+      },
+      {
+        q: "Which tag is used for creating a numbered list?",
+        type: "radio",
+        options: ["<ol>", "<ul>", "<li>", "<list>"]
+      },
+      {
+        q: "Which attribute specifies the destination URL in an anchor tag?",
+        type: "radio",
+        options: ["link", "href", "src", "url"]
+      },
+      {
+        q: "Which tag adds a table row?",
+        type: "radio",
+        options: ["<tr>", "<td>", "<th>", "<tableRow>"]
+      },
+      {
+        q: "What is the purpose of the <title> tag?",
+        type: "radio",
+        options: ["Shows a tooltip", "Displays title on browser tab", "Adds header in body", "Creates a paragraph"]
+      },
+      {
+        q: "What does CSS stand for?",
+        type: "radio",
+        options: ["Computer Styled Sections", "Creative Style Sheets", "Cascading Style Sheets", "Colorful Style Syntax"]
+      },
+      {
+        q: "Where is the correct place to insert CSS in HTML?",
+        type: "radio",
+        options: [
+          "Only in external files",
+          "Inside <head> using <style>",
+          "Before closing </html>",
+          "In a <div>"
+        ]
+      },
+      {
+        q: "Which property controls text size?",
+        type: "radio",
+        options: ["font-style", "text-size", "font-size", "size"]
+      },
+      {
+        q: "How do you make a background color in CSS?",
+        type: "radio",
+        options: [
+          "bg-color: red;",
+          "background-color: red;",
+          "color-background: red;",
+          "background:color red;"
+        ]
+      },
+      {
+        q: "What is the correct syntax for a class selector?",
+        type: "radio",
+        options: ["#classname", ".classname", "classname", "*classname"]
+      },
+      {
+        q: "Which unit is relative in CSS?",
+        type: "radio",
+        options: ["px", "pt", "em", "cm"]
+      },
+      {
+        q: "Which of the following is a correct comment in CSS?",
+        type: "radio",
+        options: ["<!-- comment -->", "/* comment */", "// comment //", "# comment #"]
+      },
+      {
+        q: "What is Bootstrap?",
+        type: "radio",
+        options: ["JavaScript library", "CSS framework", "HTML template", "CMS"]
+      },
+      {
+        q: "Which class makes a button in Bootstrap?",
+        type: "radio",
+        options: [".btn", ".button", "<button>", ".boot-button"]
+      },
+      {
+        q: "What class makes a responsive container?",
+        type: "radio",
+        options: [".responsive", ".container-fluid", ".flex-box", ".full-container"]
+      },
+      {
+        q: "Which class centers text?",
+        type: "radio",
+        options: [".center-text", ".text-center", ".align-center", ".center-align"]
+      },
+      {
+        q: "Which class makes 6 columns on medium screens?",
+        type: "radio",
+        options: [".col-md-6", ".col-6-md", ".md-col-6", ".col-6"]
+      },
+      {
+        q: "Which class hides content only on small screens?",
+        type: "radio",
+        options: [".d-sm-hide", ".d-none d-sm-block", ".hidden-sm", ".hide-sm"]
+      },
+      {
+        q: "Which tag is required for Bootstrap’s grid system?",
+        type: "radio",
+        options: ["<grid>", "<container>", "<div class='row'>", "<section>"]
+      },
+      {
+        q: "Which of these is a JavaScript data type?",
+        type: "radio",
+        options: ["Number", "Float", "Double", "Real"]
+      },
+      {
+        q: "Select all correct JavaScript comment formats:",
+        type: "radio",
+        options: ["<!-- comment -->", "/ comment /", "// comment", "# comment"]
+      },
+      {
+        q: "What is the correct way to define a function?",
+        type: "radio",
+        options: [
+          "function:myFunc()",
+          "def myFunc()",
+          "function myFunc() {}",
+          "create function myFunc()"
+        ]
+      },
+      {
+        q: "How do you declare a variable in JavaScript?",
+        type: "radio",
+        options: ["v x = 5;", "variable x = 5;", "let x = 5;", "dim x = 5;"]
+      },
+      {
+        q: "Which event triggers when an element is clicked?",
+        type: "radio",
+        options: ["onchange", "onclick", "onpress", "onhover"]
+      },
+      {
+        q: "Which operator checks value and type?",
+        type: "radio",
+        options: ["==", "=", "===", "!="]
+      }
+    ];
+
+    let current = 0;
+    const total = questions.length;
+    const answers = [];
+
+    function loadQuestion() {
+      const q = questions[current];
+      document.getElementById('question').innerText = `Q${current + 1}: ${q.q}`;
+      const optionsContainer = document.getElementById('options');
+      optionsContainer.innerHTML = '';
+
+      q.options.forEach((opt, i) => {
+        const input = document.createElement('input');
+        input.type = q.type;
+        input.name = 'option';
+        input.value = opt;
+        input.id = `opt-${i}`;
+
+        const label = document.createElement('label');
+        label.htmlFor = `opt-${i}`;
+        label.innerText = ' ' + opt;
+
+        const div = document.createElement('div');
+        div.classList.add('option');
+        div.appendChild(input);
+        div.appendChild(label);
+
+        optionsContainer.appendChild(div);
+      });
+    }
+    
+    function submitToGoogleForm() {
+      const entryIDs = [
+        "666411735", "1283485345", "972039777", "1022530269", "1871529740",
+        "680921714", "1723741044", "63295783", "2075954724", "254184955",
+        "70799996", "1626234095", "506296017", "223269082", "2146790173",
+        "1710667797", "2052928145", "454866663", "1120750973", "2028262730",
+        "1944364416", "429211628", "882592813", "569896129", "902453165",
+        "1114430011", "807231996", "1234098130", "1728253767", "1118326547"
+      ];
+
+      if (!answers || answers.length !== entryIDs.length) {
+        alert("Answer data is incomplete or mismatched. Please try again.");
+        console.error("answers array and entryIDs length mismatch.");
+        return;
+      }
+
+      const formData = new FormData();
+
+      for (let i = 0; i < entryIDs.length; i++) {
+        const entryKey = 'entry.${entryIDs[i]}';
+        const userAnswer = Array.isArray(answers[i]?.answer)
+          ? answers[i].answer.join(", ")
+          : answers[i]?.answer || '';
+
+        formData.append(entryKey, userAnswer);
+      }
+
+      fetch("https://docs.google.com/forms/d/e/1FAIpQLSetIxpYEVLSZYkrBN7ojUGlWS5E4rFgE95n3AvWeigA2a7l2A/formResponse", {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+      }).then(() => {
+        alert("Answers submitted successfully!");
+      }).catch((error) => {
+        console.error("Submission error:", error);
+        alert("There was an error submitting your answers.");
+      });
+    };
+    
+
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+      const selected = document.querySelectorAll('input[name="option"]:checked');
+      let response = [];
+      selected.forEach(opt => response.push(opt.value));
+      answers.push({ question: questions[current].q, answer: response });
+
+      current++;
+      if (current < total) {
+        loadQuestion();
+      } else {
+        alert("You've completed the quiz. Submitting your answers...");
+        submitToGoogleForm() // You can send to backend/Google Form here.
+        // window.location.href = "https://forms.gle/your-google-form";
+      }
+    });
+
+    // Timer
+    let time = 15 * 60;
+    const timerInterval = setInterval(() => {
+      let minutes = Math.floor(time / 60);
+      let seconds = time % 60;
+      document.getElementById("time").innerText =
+        `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+      if (--time < 0) {
+        clearInterval(timerInterval);
+        alert("Time's up! Submitting automatically.");
+        console.log(answers); // Send collected answers
+      }
+    }, 1000);
+
+    // Load first question
+    loadQuestion();
+  </script>
+</body>
+</html>
