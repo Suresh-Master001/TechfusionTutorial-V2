@@ -169,19 +169,25 @@
 				<h2 class="fw-bold mb-3">Welcome to Style Rebelz 2025 – Web Competition (TFT Edition)!</h2>
 				<p class="mb-3">Get ready to unleash your creativity and test your web skills in three power-packed rounds! Make sure to participate only during the scheduled time slots — the rounds will be accessible only within their respective durations.<br>
 					<br>Round 1:<br>
-						10:00 AM – 10:15 AM (15 minutes)<br>
+						10:00 AM – 10:45 AM (15 minutes)<br>
 						MCQ Challenge<br><br>
 
 						Round 2:<br>
-						2:00 PM – 3:30 PM (1 hour 30 minutes)<br>
+						2:00 PM – 4:30 PM (1 hour 30 minutes)<br>
 						Clone Task<br><br>
 
 						Round 3:<br>
-						7:00 PM – 8:30 PM (1 hour 30 minutes)<br>
+						7:00 PM – 9:30 PM (1 hour 30 minutes)<br>
 						Build a Full Web Page with limited elements<br><br>
 
-						Sponsored by Freedom Master Laptop Service<br></p>
-				<a href="style-rebels.html" class="btn btn-primary btn-lg mt-3">Start Now</a>
+						Sponsored by Freedom Master Laptop Service<br>
+					
+						Note:<br>
+						Each round will be locked outside its time window. Be punctual, stay focused, and give it your best shot!
+						<br><br>
+						Good luck, Rebelz!<br>
+						Let the code speak louder than words.<br></p>
+				<button  onclick="authenticateUser()" class="btn btn-primary btn-lg mt-3">Start Now</button>
 			  </div>
 		  
 			</div>
@@ -223,7 +229,26 @@
 		//fallbackImage.style.display = 'block';
 		//};
 
+		const validParticipants = {
+			"Rabiya": "TFT2025hd",
+			"Agalya": "TFT2025ew",
+			"Dhivya": "TFT2025ok",
+			"Rose": "TFT2025su",
+			"Madhu": "TFT2025da"
+			};
 
+			function authenticateUser() {
+			const username = prompt("Enter your username:");
+			const code = prompt("Enter your unique code:");
+
+			if (username && code && validParticipants[username] === code) {
+				alert("Authentication successful! Redirecting...");
+				localStorage.setItem("TFT_Competition_Participant", username);
+				window.location.href = "style-rebels.html"; // replace with your real quiz page
+			} else {
+				alert("Participation not proper. Username or code is incorrect.");
+			}
+		}
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
