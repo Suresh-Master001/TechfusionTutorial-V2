@@ -72,6 +72,9 @@
   <script>
 
     const username= prompt("Enter your name: ");
+    if (userName) {
+      document.getElementByld("userName").value = userName;
+    } else { alert("Name is required!"); }
 
     const questions = [
       {
