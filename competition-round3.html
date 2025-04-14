@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Style Rebelz 2025 - Round 3</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url("https://cdn.pixabay.com/photo/2019/02/14/07/28/painting-3995999_960_720.jpg") center/cover ;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #e1306c;
+    }
+    p {
+      line-height: 1.7;
+    }
+    .resources {
+      background: #fef8f9;
+      padding: 15px;
+      border-left: 5px solid #e1306c;
+      margin: 20px 0;
+    }
+    .button {
+      background-color: #e1306c;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #c12059;
+    }
+    body.locked {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #locked-message {
+      text-align: center;
+      color: red;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Style Rebelz 2025 - Round 3</h1>
+    <div id="timer-container">
+      <h2>Time Remaining: <span id="countdown">Loading...</span></h2>
+    </div>
+    <p><strong>Time Limit:</strong> 1 Hour 30 Minutes</p>
+    <p><strong>Points:</strong> 20 Points</p>
+    <b>Task: Responsive Personal Info Card Page (Beginner Level – 1.5 Hours)</b><br>
+    Goal: Create a responsive "Personal Info Card" webpage that displays your basic details in a stylish card format, with a contact form and simple JavaScript validation.<br>
+    What to Build:<br><br>
+    1. Personal Info Card Section<br>
+    Your photo (or placeholder)<br>
+    Name, designation<br>
+    A short bio or description<br>
+    Social media links (icons or text)<br><br>
+    2. Contact Form Section<br>
+    Inputs: Name, Email, Message<br>
+    Submit button<br>
+    Show success message with alert using js<br><br>
+    Required Tech & Skills<br>
+    HTML Tags (at least 20)<br>
+    Use: html, head, script, body, header, main, section, h1, p, img, a, form, input, button, footer, div, span, style,video.
+    <br><br>
+    CSS Properties (at least 20)<br>
+    Use: color, background, font-family, margin, padding, width, height, border-radius, box-shadow, transition, text-align, display, flex, justify-content, align-items, hover, position, top, z-index, cursor
+    <br><br>
+    Bootstrap Classes (at least 20)<br>
+    Use: container, row, col, card, card-body, btn, btn-primary, form-control, text-center, mb-3, mt-4, img-fluid, d-flex, justify-content-center, align-items-center, shadow, rounded, bg-light, navbar, footer
+    <br><br>
+    JavaScript Events<br>
+    click: show success message<br><br>
+
+
+    <h3>Submission:</h3>
+    <p>Please upload your completed <code>index file or zip file</code> file below. Make sure the clone design is inside one file with embedded CSS. Use only HTML and CSS. No JavaScript required.</p>
+    
+    <a class="button" id="submitBtn" href="https://docs.google.com/forms/d/e/1FAIpQLSeFrvJOW0e88LWd0BhLtcJnQPIUKgB_-2psoiiPzEucBBqWTA/viewform">Submit your files</a>
+    
+    <div id="locked-message" class="hidden">
+      <h3>Time's up! Round 3 is now closed.</h3>
+    </div> 
+
+    <script>
+      // Set the timer duration: 1.5 hours in milliseconds
+        const duration = 1.5 * 60 * 60 * 1000;
+        const countdownEl = document.getElementById("countdown");
+        const submitBtn = document.getElementById("submitBtn");
+        const lockedMessage = document.getElementById("locked-message");
+
+        // Store the start time in localStorage to persist across refresh
+        let startTime = localStorage.getItem("round3StartTime");
+
+        if (!startTime) {
+          startTime = Date.now();
+          localStorage.setItem("round3StartTime", startTime);
+        } else {
+          startTime = parseInt(startTime);
+        }
+
+        function updateCountdown() {
+          const now = Date.now();
+          const remaining = startTime + duration - now;
+
+          if (remaining <= 0) {
+            countdownEl.textContent = "00:00:00";
+            lockPage();
+            return;
+          }
+
+          const hours = Math.floor((remaining / (1000 * 60 * 60)) % 24);
+          const minutes = Math.floor((remaining / (1000 * 60)) % 60);
+          const seconds = Math.floor((remaining / 1000) % 60);
+
+          countdownEl.textContent = 
+            hours.toString().padStart(2, '0') +
+            minutes.toString().padStart(2, '0') +
+            seconds.toString().padStart(2, '0');
+        }
+
+        function lockPage() {
+          submitBtn.style.display = "none";
+          lockedMessage.classList.remove("hidden");
+          document.body.classList.add("locked");
+          localStorage.removeItem("round3StartTime"); // Optional: reset for next round
+        }
+
+        updateCountdown();
+        const countdownInterval = setInterval(() => {
+          updateCountdown();
+        }, 1000);
+
+
+    </script>
+</body>
+</html>
